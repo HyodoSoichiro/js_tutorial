@@ -9,6 +9,7 @@ function palindrome(string) {
   return processedContent === reverse(processedContent);
 }
 
+
 // Defines a Phrase object.
 function Phrase(content) {
   this.content = content;
@@ -89,3 +90,6 @@ console.log(frase.louder());
 //   }
 // }
 
+
+
+var App

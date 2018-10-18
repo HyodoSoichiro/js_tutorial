@@ -72,15 +72,28 @@ function Phrase(content) {
 },{}],2:[function(require,module,exports){
 let Phrase = require("soichiro-palindrome");
 
-let string = prompt("Please enter a string for palindrome testing:");
-let phrase = new Phrase(string);
 
-if(phrase.palindrome()){
-  alert(`This is palindrome!!`);
-}else{
-  alert(`This is not palindrome!!`);
+function Palind(event){
+  event.preventDefault();
+
+  let phrase = new Phrase(event.target.phrase.value);
+  let palindResult = document.querySelector("#palindResult");
+
+  if(phrase.palindrome()){
+    palindResult.innerHTML = `" <strong>${phrase.content}</strong> " is palindrome!!`;
+  }else{
+    palindResult.innerHTML = `" <strong>${phrase.content}</strong> " is not palindrome!!`;
+  }
 }
 
+
+// document.addEventListener("DOMContentLoaded", function() {
+  // console.log("Loaded");
+  let form = document.querySelector("#btnPalind");
+  form.addEventListener("submit", function() {
+    Palind(event);
+  });
+// });
 // function palindromeTester(event) {
 //   event.preventDefault();
 
